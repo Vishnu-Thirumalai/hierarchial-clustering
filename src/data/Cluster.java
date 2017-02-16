@@ -19,14 +19,24 @@ public class Cluster {
 		return centroid; 
 	}
 	
+	private ArrayList<Point> getPoints()
+	{
+		return points;
+	}
+	
 	public void setCentroid(Point c)
 	{
 		centroid = c;
 	}
 	
-	public void addPoint(Point p)
+	public void add(Point p)
 	{
 		points.add(p);
+	}
+	
+	public void add(Cluster c)
+	{
+		points.addAll(c.getPoints());
 	}
 	
 	public void empty()
